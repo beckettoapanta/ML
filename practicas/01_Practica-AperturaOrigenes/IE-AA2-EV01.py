@@ -50,3 +50,14 @@ print(nulos_por_columna[nulos_por_columna>0])  # Muestra solo las columnas con v
 print("------------------------------------------------------------")
 print("Total de valores nulos despues de reemplazar agent:")
 print(data.isnull().sum().sum())
+
+
+print("------------------------------------------------------------")
+print("Reemplazando los valores nulos en la columna 'country' con OTRO...")
+data['country'] = data['country'].fillna("OTRO")
+print("Valores nulos por columna después de reemplazar los valores nulos en la columna 'country' con OTRO:")
+nulos_por_columna = data.isnull().sum()
+print(nulos_por_columna[nulos_por_columna>0])  # Muestra solo las columnas con valores nulos
+print("------------------------------------------------------------")
+print("Total de valores nulos despues de reemplazar country:")
+print(data.isnull().sum().sum())
